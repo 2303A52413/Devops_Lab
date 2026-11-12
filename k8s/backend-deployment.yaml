@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: digital-notice-board
+    component: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: digital-notice-board
+      component: backend
+  template:
+    metadata:
+      labels:
+        app: digital-notice-board
+        component: backend
+    spec:
+      containers:
+        - name: backend
+          image: noticeboard-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+              name: http
+          envFrom:
+            - configMapRef:
+                name: noticeboard-config
+            - secretRef:
+                name: noticeboard-secret
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3

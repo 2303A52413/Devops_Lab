@@ -1,0 +1,156 @@
+
+.create-announcement-page {
+  min-height: 100vh;
+  background: #f4f7fc;
+  padding: 35px;
+}
+
+.create-header {
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #123b75;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.create-header h1 {
+  color: #123b75;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.create-header p {
+  color: #7a8799;
+  font-size: 14px;
+}
+
+.announcement-form {
+  max-width: 950px;
+  margin: auto;
+}
+
+.form-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+}
+
+.form-section h2 {
+  color: #123b75;
+  font-size: 20px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  display: block;
+  color: #26354b;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d7dce5;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  font-family: inherit;
+}
+
+.input-group textarea {
+  resize: vertical;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-color: #123b75;
+  box-shadow: 0 0 0 3px rgba(18, 59, 117, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.file-help {
+  margin-top: 10px;
+  color: #7a8799;
+  font-size: 12px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.cancel-btn,
+.publish-btn {
+  padding: 13px 25px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: white;
+  border: 1px solid #d7dce5;
+  color: #26354b;
+}
+
+.publish-btn {
+  background: #123b75;
+  color: white;
+  border: none;
+}
+
+.publish-btn:hover {
+  background: #0b2853;
+}
+
+@media (max-width: 650px) {
+  .create-announcement-page {
+    padding: 20px;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .publish-btn {
+    width: 100%;
+  }
+}
